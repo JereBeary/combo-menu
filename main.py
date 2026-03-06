@@ -13,8 +13,8 @@ while True:
         print("You have chosen the train ticket. Your total is now $3.00.")
         break
     else: 
-        print("Invalid Choice. Please enter either 'bus' or 'train' to select your transportation method.")
-        break
+        first_choice = input("Invalid Choice. Please enter either 'bus' or 'train' to select your transportation method:")
+        
 
 
 daypass_price = 5.00
@@ -28,8 +28,7 @@ while True:
         print("You have chosen to not purchase the day pass. Your total is still $" + str(running_total) + ".")
         break
     else:
-        print("Invalid Choice. Please enter either 'yes' or 'no' to select whether you would like to purchase the day pass.")
-        break
+        second_choice = input("Invalid Choice. Please enter either 'yes' or 'no' to select whether you would like to purchase the day pass:")
 
 audio_price = 1.00
 physical_price = 1.00
@@ -47,29 +46,24 @@ while True:
         print("You have chosen to not purchase a tour. Your total is still $" + str(running_total) + ".")
         break
     else: 
-        print("Invalid Choice. Please enter either 'audio', 'map', or 'none' to select your tour option.")
-        break
+        third_choice = input("Invalid Choice. Please enter either 'audio', 'map', or 'none' to select your tour option:")
 
 print("You have chosen " + first_choice + " as your transportation method, " + second_choice + " for the day pass, and " + third_choice + " for your tour option.")
 print("Is this correct?")
 while True:
     fourth_choice = input("Please enter 'yes' or 'no':")
-    break
     if fourth_choice == "yes":
         print("Great! We will now process your order.")
         break
-        if running_total > 8:
-            running_total -= 1.50
-            print("Thank you for your purchase! We have removed $1.50 from your total for being a loyal customer. Your final total is $" + str(running_total) + ".")
-            print("Have an amazing day and thank you for using the Durham Transportation System!")
-            break
-        else:
-            print("Thank you for your purchase! Your final total is $" + str(running_total) + ".")
-            print("Have an amazing day and thank you for using the Durham Transportation System!")
-            break
     elif fourth_choice == "no":
         print("We are sorry for the inconvenience. Please restart the program to make your selections again.")
         break
     else:
-        print("Invalid Choice. Please enter either 'yes' or 'no' to confirm your order.")
-        break
+        fourth_choice = input("Please enter 'yes' or 'no':")
+if fourth_choice == "yes":
+    if running_total > 8:
+        running_total -= 1.50
+        print("Thank you for your purchase! We have removed $1.50 from your total for being a loyal customer. Your final total is $" + str(running_total) + ".")
+    else:
+        print("Thank you for your purchase! Your final total is $" + str(running_total) + ".")
+    print("Have an amazing day and thank you for using the Durham Transportation System!")
